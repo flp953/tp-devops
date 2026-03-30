@@ -1,11 +1,12 @@
 from flask import Flask
-import os
+import redis
 
 app = Flask(__name__)
+r = redis.Redis(host="redis", port=6379)
 
 @app.route("/")
 def home():
-    message = os.getenv("MESSAGE", "Hello Default")
-    return message
+    r.incr("counter")
+    return f"Visites : {r.get('counter').decode()}"
 
 app.run(host="0.0.0.0", port=5000)

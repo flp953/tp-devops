@@ -1,0 +1,23 @@
+VERSION v1.0
+Requests/sec: 394.00
+Average: 0.0144 secs
+Fastest: 0.0000 secs
+Slowest: 0.0440 secs
+
+VERSION v1.1
+Requests/sec: 302.67
+Average: 0.0197 secs
+Fastest: 0.0042 secs
+Slowest: 0.0700 secs
+
+VERSION v1.2
+Requests/sec: 71.99
+Average: 0.1218 secs
+Fastest: 0.1068 secs
+Slowest: 0.1395 secs
+
+ANALYSE :
+- v1.0 est la plus rapide (394 req/sec)
+- v1.1 est légèrement plus lente (302 req/sec)
+- v1.2 est la plus lente (71 req/sec) car elle a un sleep(0.1)
+- En production on déploierait la v1.0
